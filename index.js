@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         // remove user from active users
         activeUsers = activeUsers.filter((user) => user.socketId !== socket.id);
-        console.log("User Disconnected", activeUsers);
+        // console.log("User Disconnected", activeUsers);
         // send all active users to all users
         io.emit("get-users", activeUsers);
     });
